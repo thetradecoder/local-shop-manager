@@ -1,17 +1,15 @@
-import logo from './logo.png';
+import React from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+
 import './App.css';
+import 'bootstrap/dist/ccs/bootstrap.min.css';
+import AddProduct from './components/add-product.component';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Local Shop Manager
-        </p>       
-       
-      </header>
-    </div>
+    <Router>
+      <Route path="/add-product" component={AddProduct}/>
+    </Router>
   );
 }
 
