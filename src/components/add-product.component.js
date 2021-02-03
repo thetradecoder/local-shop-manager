@@ -42,7 +42,7 @@ export default function AddProduct(){
         .catch(err=>window.alert(err))
     }
     return(
-        <div>
+        <div className="container">
             <div><h1>Enlist a new product</h1></div>
             <div>
                 <form onSubmit={onSubmitProductData}>
