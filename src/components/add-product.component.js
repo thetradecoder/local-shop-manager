@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
-import 'jquery/dist/jquery';
+import 'jquery/dist/jquery'; 
+import axios from 'axios';
 
 
 export default function AddProduct(){
@@ -35,7 +36,10 @@ export default function AddProduct(){
             companyName,
             brandName,
             productGroup
-        }
+        };
+        axios.post('http://localhost:5000/add-product', productData)
+        .then(res=>window.alert(res.data))
+        .catch(err=>window.alert(err))
     }
     return(
         <div>
