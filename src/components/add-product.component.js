@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import 'jquery/dist/jquery'; 
+import '../App.css';
 import axios from 'axios';
 
 
@@ -42,7 +43,7 @@ export default function AddProduct(){
         .catch(err=>window.alert(err))
     }
     return(
-        <div className="container">
+        <div className="body-part">
             <div><h1>Enlist a new product</h1></div>
             <div>
                 <form onSubmit={onSubmitProductData}>
