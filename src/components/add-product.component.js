@@ -21,6 +21,9 @@ export default function AddProduct(){
                         <label>Product Id</label>
                         <input type="text" onChange={onChangeProductId} className="form-control"/>
                     </div>
+                    <div>
+                        <button type="submit" className="btn btn-primary">Add new product</button>
+                    </div>
                 </form>
             </div>
         </div>
