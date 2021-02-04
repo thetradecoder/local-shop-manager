@@ -5,7 +5,7 @@ router.route('/add-product')
 .post((req, res)=>{
     const {username, userid}=req.params;
     const {productId, productName, companyName, brandName, productGroup}= req.body;
-    const productData = {productId, productName, companyName, brandName, productGroup};
+    const productData = {productId, productName, companyName, brandName, productGroup, username, userid};
     productData.save()
     .then(data=>res.send(data))
     .catch(err=>res.send('Operation Failed!'+err))
