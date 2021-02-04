@@ -6,7 +6,14 @@ const ProductSchema = new Schema({
     productName:{type:String, unique:true},
     companyName:{type:String},
     brandName:{type:String},
-    productGroup:{type:String}
+    productGroup:{type:String},
+    stock:{type:Number},
+    buy:{type:Number},
+    sales:{type:Number},
+    buyOrderPipeline:{type:Number},
+    saleOrderPipline:{type:Number},
+    totalBuyValue:{type:Number},
+    totalSalesValue:{type:Number}
 }, {timestamps:true});
 
 
