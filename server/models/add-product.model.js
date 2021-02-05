@@ -8,16 +8,18 @@ const ProductSchema = new Schema({
     brandName:{type:String},
     productGroup:{type:String},
     stock:{type:Number},
-    buy:{type:Number},
-    sales:{type:Number},
+    buyHistory:[],
+    salesHistory:[],
     buyOrderPipeline:{type:Number},
-    saleOrderPipline:{type:Number},
+    salesOrderPipline:{type:Number},
     totalBuyValue:{type:Number},
-    totalSalesValue:{type:Number}
+    totalSalesValue:{type:Number},
+    username:{type:String},
+    userid:{type:String}
 }, {timestamps:true});
 
 
-const AddNewProduct = mongoose.model('AddNewProduct', ProductSchema);
+const AddProduct = mongoose.model('AddProduct', ProductSchema);
 
 module.exports = AddNewProduct;
 
