@@ -8,7 +8,16 @@ const ProductSchema = new Schema({
     brandName:{type:String},
     productGroup:{type:String},
     stock:{type:Number},
-    buyHistory:[],
+    buyHistory:[
+        {
+            date:{type:Date},
+            quantity:{type:Number},
+            unitePrice:{type:Number},
+            totalPrice:{type:Number},
+            payment:{type:String},
+            remarks:{type:String}
+        }
+    ],
     salesHistory:[],
     buyOrderPipeline:{type:Number},
     salesOrderPipline:{type:Number},
