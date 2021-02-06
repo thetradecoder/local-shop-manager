@@ -11,4 +11,19 @@ router.route('/add-product')
     .catch(err=>res.send('Operation Failed!'+err))
 });
 
+rotuer.route('/show-product-list')
+.get((req, res)=>{
+    Product.find({}, {productId:true, productName:true})
+    .then(data=>res.send(data))
+    .catch(err=>res.send(err))
+});
+
+router.route('/show-single-product-stock')
+.get((req, res)=>{
+    const {productId} = req.params;
+    Product.find({productId}, {stock:true})
+    .then(data=>res.send(data))
+    .catch(err=>res.send(err))
+})
+
 module.exports =  router;
