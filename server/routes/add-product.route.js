@@ -21,7 +21,14 @@ rotuer.route('/show-product-list')
 router.route('/show-single-product-stock')
 .get((req, res)=>{
     const {productId} = req.params;
-    Product.find({productId}, {stock:true})
+    Product.find({productId}, {productId:true, productName:true, stock:true})
+    .then(data=>res.send(data))
+    .catch(err=>res.send(err))
+});
+
+router.route('/show-single-product-position')
+.get((req, res)=>{
+    Product.findOne({productId}, {productId:true, productName:true, stock:true, totalBuyValue:true, totalSalesValue:true})
     .then(data=>res.send(data))
     .catch(err=>res.send(err))
 })
