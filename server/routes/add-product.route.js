@@ -40,6 +40,15 @@ router.route('/buy-a-product')
     Product.findOneAndUpdate({productId, username, userid}, {$push:{buyHistory}, $inc:{stock:buyHistory.quantity, totalBuyValue:buyHistory.totalPrice}})
     .then(data=>res.status(200).send('Buy completed!'))
     .catch(err=>res.send(err))
+});
+
+router.route('/sell-a-product')
+.put((req, res)=>{
+    const {username, userid, productId}= req.params;
+    const {salesHistory} = req.body;
+    Product.findOneAndUpdate({productId, username, userid}, {$push:{salesHistory}, $dec:{stock:salesHistory.quantity}, $inc:{totalSalesValue:salesHistory.totalPrice}})
+    .then(data=>res.status(200).send('Sales completed!'))
+    .catch(err=>res.send(err))
 })
 
 module.exports =  router;
