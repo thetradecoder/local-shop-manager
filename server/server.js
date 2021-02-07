@@ -3,9 +3,8 @@ const cors =  require('cors');
 const helmet = require('helmet');
 const mongoose = require('mongoose');
 require ('dotenv').config();
-const addProductRoute = require('./routes/add-product.route');
-const buyProductRoute  = require('./routes/buy-a-product.route');
-const sellProductRoute = require('./routes/sell-a-product.route');
+const productRoute = require('./routes/product.route');
+
 
 
 const app = express();
@@ -21,9 +20,7 @@ mongoose.connect(dbUri, {useNewUrlParser:true, useUnifiedTopology:true, useCreat
 app.use(cors());
 app.use(helmet());
 app.use(express.json());
-app.use('/add-new-product', addProductRoute);
-app.use('/buy-a-product', buyProductRoute);
-app.use('/sell-a-product', sellProductRoute);
+app.use('/add-new-product', productRoute);
 
 
 app.listen(port, ()=>{
