@@ -4,6 +4,8 @@ import 'bootstrap/dist/js/bootstrap.bundle';
 import 'jquery/dist/jquery'; 
 import '../App.css';
 import axios from 'axios';
+const username = localStorage.getItem('username');
+const userid = localStorage.getItem('userid');
 
 
 export default function AddProduct(){
@@ -38,7 +40,7 @@ export default function AddProduct(){
             brandName,
             productGroup
         };
-        axios.post('http://localhost:5000/add-product', productData)
+        axios.post(`http://localhost:5000/add-product/${username}/${userid}`, productData)
         .then(res=>window.alert(res.data))
         .catch(err=>window.alert(err))
     }
