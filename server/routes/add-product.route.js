@@ -11,7 +11,7 @@ router.route('/add-product/:username/:userid')
     .catch(err=>res.send('Operation Failed!'+err))
 });
 
-rotuer.route('/show-product-list')
+rotuer.route('/show-product-list/:username/:userid')
 .get((req, res)=>{
     const {username, userid} = req.params;
      Product.find({username, userid}, {productId:true, productName:true})
@@ -19,7 +19,7 @@ rotuer.route('/show-product-list')
     .catch(err=>res.send(err))
 });
 
-router.route('/show-single-product-stock')
+router.route('/show-single-product-stock/:productId/:username/:userid')
 .get((req, res)=>{
     const {productId, username, userid} = req.params;
     Product.findOne({productId, username, userid}, {productId:true, productName:true, companyName:true, brandName:true, productGroup:true, stock:true})
