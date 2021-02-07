@@ -20,7 +20,7 @@ mongoose.connect(dbUri, {useNewUrlParser:true, useUnifiedTopology:true, useCreat
 app.use(cors());
 app.use(helmet());
 app.use(express.json());
-app.use('/add-new-product', productRoute);
+app.use('/', productRoute);
 
 
 app.listen(port, ()=>{
