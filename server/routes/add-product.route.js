@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const Product = require('../models/add-product.model');
+const Product = require('../models/product.model');
 
-router.route('/add-product')
+router.route('/add-product/:username/:userid')
 .post((req, res)=>{
     const {username, userid}=req.params;
     const {productId, productName, companyName, brandName, productGroup}= req.body;
@@ -27,7 +27,7 @@ router.route('/show-single-product-stock')
     .catch(err=>res.send(err))
 });
 
-router.route('/show-single-product-position')
+router.route('/show-single-product-position/:productId/:username/:userid')
 .get((req, res)=>{
     const {productId, username, userid}=req.params;
     Product.findOne({productId, username, userid}, {productId:true, productName:true, companyName:true, brandName:true, productGroup:true,  stock:true, totalBuyValue:true, totalSalesValue:true})
@@ -35,7 +35,7 @@ router.route('/show-single-product-position')
     .catch(err=>res.send(err))
 });
 
-router.route('/buy-a-product')
+router.route('/buy-a-product/:productId/:username/:userid')
 .put((req, res)=>{
     const {username, userid, productId} =  req.params;
     const {buyHistory} = req.body;
@@ -44,7 +44,7 @@ router.route('/buy-a-product')
     .catch(err=>res.send(err))
 });
 
-router.route('/sell-a-product')
+router.route('/sell-a-product/:productId/:username/:userid')
 .put((req, res)=>{
     const {username, userid, productId}= req.params;
     const {salesHistory} = req.body;
