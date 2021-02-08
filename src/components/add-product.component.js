@@ -40,7 +40,7 @@ export default function AddProduct(){
             brandName,
             productGroup
         };
-        axios.post(`http://localhost:5000/add-product/${username}/${userid}`, productData)
+        axios.post(`http://localhost:5000/add-new/${username}/${userid}`, productData)
         .then(res=>window.alert(res.data))
         .catch(err=>window.alert(err))
     }
