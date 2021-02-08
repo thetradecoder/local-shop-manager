@@ -11,7 +11,7 @@ router.route('/add-product/:username/:userid')
     .catch(err=>res.send('Operation Failed!'+err))
 });
 
-rotuer.route('/show-product-list/:username/:userid')
+router.route('/show-product-list/:username/:userid')
 .get((req, res)=>{
     const {username, userid} = req.params;
      Product.find({username, userid}, {productId:true, productName:true})
