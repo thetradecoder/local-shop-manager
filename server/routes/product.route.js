@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const Product = require('../models/product.model');
 
-router.route('/add-product/:username/:userid')
+router.route('/add-new/:username/:userid')
 .post((req, res)=>{
     const {username, userid}=req.params;
     const {productId, productName, companyName, brandName, productGroup}= req.body;
@@ -11,7 +11,7 @@ router.route('/add-product/:username/:userid')
     .catch(err=>res.send('Operation Failed!'+err))
 });
 
-router.route('/show-product-list/:username/:userid')
+router.route('/view-product-list/:username/:userid')
 .get((req, res)=>{
     const {username, userid} = req.params;
      Product.find({username, userid}, {productId:true, productName:true})
@@ -19,7 +19,7 @@ router.route('/show-product-list/:username/:userid')
     .catch(err=>res.send(err))
 });
 
-router.route('/show-single-product-stock/:productId/:username/:userid')
+router.route('/view-stock/:productId/:username/:userid')
 .get((req, res)=>{
     const {productId, username, userid} = req.params;
     Product.findOne({productId, username, userid}, {productId:true, productName:true, companyName:true, brandName:true, productGroup:true, stock:true})
@@ -27,7 +27,7 @@ router.route('/show-single-product-stock/:productId/:username/:userid')
     .catch(err=>res.send(err))
 });
 
-router.route('/show-single-product-position/:productId/:username/:userid')
+router.route('/view-position/:productId/:username/:userid')
 .get((req, res)=>{
     const {productId, username, userid}=req.params;
     Product.findOne({productId, username, userid}, {productId:true, productName:true, companyName:true, brandName:true, productGroup:true,  stock:true, totalBuyValue:true, totalSalesValue:true})
@@ -35,7 +35,7 @@ router.route('/show-single-product-position/:productId/:username/:userid')
     .catch(err=>res.send(err))
 });
 
-router.route('/buy-a-product/:productId/:username/:userid')
+router.route('/buy/:productId/:username/:userid')
 .put((req, res)=>{
     const {username, userid, productId} =  req.params;
     const {buyHistory} = req.body;
@@ -44,7 +44,7 @@ router.route('/buy-a-product/:productId/:username/:userid')
     .catch(err=>res.send(err))
 });
 
-router.route('/sell-a-product/:productId/:username/:userid')
+router.route('/sell/:productId/:username/:userid')
 .put((req, res)=>{
     const {username, userid, productId}= req.params;
     const {salesHistory} = req.body;
