@@ -55,8 +55,8 @@ export default function UserLogin(){
         return(
             <div className="container login shadow">
                 <div className="p-2">
-                    <h1 className="text-center text-success">MONGO OFFICE</h1>
-                    <p className="text-right text-secondary pr-3">By: theTradeCoder</p>
+                    <h3 className="text-center text-success">Local Shop Manager</h3>
+                    <p className="text-right text-secondary pr-3">By: TradeCoder</p>
                 </div>
             
             <form onSubmit={onSubmitUserLogin} className="">

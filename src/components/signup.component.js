@@ -47,7 +47,7 @@ export default function UserForm(){
     return(
         <div className="container signup">
             <div>
-                <h1 className="text-center text-success shadow p-2">MONGO OFFICE</h1>
+                <h3 className="text-center text-success shadow p-2">Local Shop Manager</h3>
                 
             </div>
 
