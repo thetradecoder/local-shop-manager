@@ -11,9 +11,9 @@ const userid = localStorage.getItem('userid');
 export default function ViewProductList(){
     const [productName, setProductName] = useState();
 
-    function list(){
+    function List(){
     useEffect(()=>{
-        axios.get(`http://localhost:5000/view-product-list/`${username}/${userid})
+        axios.get(`http://localhost:5000/view-product-list/${username}/${userid}`)
         .then(d=>d.map((e,i)=>{
             return(
                 <tr>
@@ -33,7 +33,7 @@ export default function ViewProductList(){
                 <h1>Product List</h1>
             </div>
             <table>
-               {list}
+               {List()}
             </table>
         </div>
     );
