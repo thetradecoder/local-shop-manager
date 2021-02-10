@@ -10,6 +10,8 @@ const userid = localStorage.getItem('userid');
 
 export default function ViewProductList(){
     const [productName, setProductName] = useState();
+
+    function list(){
     useEffect(()=>{
         axios.get(`http://localhost:5000/view-product-list/`${username}/${userid})
         .then(d=>d.map((e,i)=>{
@@ -22,12 +24,17 @@ export default function ViewProductList(){
                 </tr>
             );
         }))
+        .catch(err=>window.alert(err))
     })
+}
     return(
         <div>
             <div>
                 <h1>Product List</h1>
             </div>
+            <table>
+               {list}
+            </table>
         </div>
     );
 }
