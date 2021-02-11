@@ -6,6 +6,7 @@ import SideNav from './components/side-nav.component';
 import UserLogin from './components/login.component';
 import Logout from './components/logout.component';
 import UserForm from './components/signup.component';
+import ViewProductList from './components/view-product-list.component';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path ="/accounts/logout" component={Logout} />
       <Route path = "/accounts/signup" component={UserForm}/>
       <Route path="/add-product" component={AddProduct}/>
+      <Route path="/view-list" component={ViewProductList}/>
     </Router>
   );
 }

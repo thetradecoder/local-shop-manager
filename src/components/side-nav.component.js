@@ -39,7 +39,8 @@ export default function SideNav(){
                 </div>
                 <div>
                     <Link to={loginLogoutLink} className="form-control nav-link">{loginLogout()}</Link>             
-                    <Link to="/add-product/" className="form-control nav-link">Add a Product</Link>                    
+                    <Link to="/add-product/" className="form-control nav-link">Add a Product</Link>
+                    <Link to="/view-list" className="form-control nav-link">View List</Link>                 
                 </div>
             </div>
         </div>
