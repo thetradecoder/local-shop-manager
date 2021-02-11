@@ -38,7 +38,7 @@ export default function ViewProductList(){
                 <h1>Product List</h1>
             </div>
             <table>
-              
+              {list}
             </table>
         </div>
     );
