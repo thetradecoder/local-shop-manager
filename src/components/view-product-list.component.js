@@ -12,10 +12,23 @@ export default function ViewProductList(){
     const [productList, setProductList] = useState([]);
 
 
-    useEffect(){
+    useEffect(()=>{
         axios.get(`http://localhost:5000/view-product-list/${username}/${userid}`)
         .then(d=>setProductList(d))
         .catch(err=>window.alert(err))
+    })
+
+    const list = ()=>{
+        productList.map((e,i)=>{
+            return(
+                <tr>
+                    <td>{e.productId}</td>
+                    <td>{e.productName}</td>
+                    <td>{e.brandName}</td>
+                    <td>{e.stock}</td>
+                </tr>
+            );
+        })
     }
 
  
