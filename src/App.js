@@ -7,6 +7,7 @@ import UserLogin from './components/login.component';
 import Logout from './components/logout.component';
 import UserForm from './components/signup.component';
 import ViewProductList from './components/view-product-list.component';
+import ViewStock from './components/view-stock.component';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path = "/accounts/signup" component={UserForm}/>
       <Route path="/add-product" component={AddProduct}/>
       <Route path="/view-list" component={ViewProductList}/>
+      <Route path="/view-stock" component={ViewStock}/>
     </Router>
   );
 }
