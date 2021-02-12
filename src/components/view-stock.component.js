@@ -34,6 +34,8 @@ export default function ViewStock(){
 
 
     return(
-        <div></div>
+        <div>
+            {productDetails()}
+        </div>
     );
 }
