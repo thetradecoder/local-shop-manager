@@ -11,7 +11,7 @@ const userid = localStorage.getItem('userid');
 
 export default function ViewStock(){
     const [product, setProduct]= useState({});
-    const [stock, setStock] = useState(0);
+    
 
 
     useEffect(()=>{
