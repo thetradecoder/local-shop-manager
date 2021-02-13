@@ -4,6 +4,7 @@ const helmet = require('helmet');
 const mongoose = require('mongoose');
 require ('dotenv').config();
 const productRoute = require('./routes/product.route');
+const userRoutes = require('./routes/user.route');
 
 
 
@@ -21,6 +22,7 @@ app.use(cors());
 app.use(helmet());
 app.use(express.json());
 app.use('/', productRoute);
+app.use('/accounts', userRoutes);
 
 
 app.listen(port, ()=>{
