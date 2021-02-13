@@ -24,7 +24,6 @@ router.route('/view-stock/:productId/:username/:userid')
     const {productId, username, userid} = req.params;    
     Product.findOne({productId}, {productId:true, productName:true, companyName:true, brandName:true, productGroup:true, stock:true})
     .then(data=>res.send(data))
-    .then(d=>console.log(d))
     .catch(err=>res.send(err))
 });
 

@@ -21,7 +21,7 @@ export default function ViewStock(){
     function onSubmitStockQuery(e){
         e.preventDefault();
         axios.get(`http://localhost:5000/view-stock/${productId}/${username}/${userid}`)
-        .then(d=>window.alert(d.stock))
+        .then(d=>window.alert(d.data.productName))
         .catch(err=>window.alert(err))
     }
 
