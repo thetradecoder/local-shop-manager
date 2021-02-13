@@ -9,6 +9,7 @@ const username = localStorage.getItem('username');
 const userid = localStorage.getItem('userid');
 
 
+
 export default function ViewStock(){
     const [product, setProduct]= useState({});
     const [productId, setProductId] = useState("");
@@ -19,6 +20,9 @@ export default function ViewStock(){
 
     function onSubmitStockQuery(e){
         e.preventDefault();
+        axios.get(`http://localhost:5000/view-stock/${productId}/${username}/${userid}`)
+        .then(d=>window.alert(d.stock))
+        .catch(err=>window.alert(err))
     }
 
 

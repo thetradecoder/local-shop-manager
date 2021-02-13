@@ -21,9 +21,10 @@ router.route('/view-product-list/:username/:userid')
 
 router.route('/view-stock/:productId/:username/:userid')
 .get((req, res)=>{
-    const {productId, username, userid} = req.params;
-    Product.findOne({productId, username, userid}, {productId:true, productName:true, companyName:true, brandName:true, productGroup:true, stock:true})
+    const {productId, username, userid} = req.params;    
+    Product.findOne({productId}, {productId:true, productName:true, companyName:true, brandName:true, productGroup:true, stock:true})
     .then(data=>res.send(data))
+    .then(d=>console.log(d))
     .catch(err=>res.send(err))
 });
 
