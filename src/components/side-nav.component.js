@@ -6,7 +6,7 @@ import "jquery/dist/jquery.js";
 import "../App.css";
 
 export default function SideNav(){
-    const user = localStorage.getItem('user');
+    const user = localStorage.getItem('username');
 
     function loginLogout(){
         if(user){
