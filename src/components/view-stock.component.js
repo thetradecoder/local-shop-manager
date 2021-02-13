@@ -17,9 +17,22 @@ export default function ViewStock(){
         setProductId(e.target.value);
     }
 
+    function onSubmitStockQuery(e){
+        e.preventDefault();
+    }
+
+
   
     return(
-        <div>
+        <div className="body-part">
+            <h1>View Stock</h1>
+            <form onSubmit={onSubmitStockQuery}>
+                <div className="form-group">
+                    <label>Input Product Id</label>
+                    <input type="text" onChange={onChangeProductId} className="form-control"/>
+                </div>
+                <button className="btn btn-primary" type="submit">View Stock</button>
+            </form>
           
         </div>
     );
