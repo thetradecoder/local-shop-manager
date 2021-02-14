@@ -26,7 +26,7 @@ export default function ViewStock(){
     }
 
     function showStock() {
-        if(product){
+        if(product.productId){
             return(
                 <div className="pt-5">
                 <p>
@@ -38,6 +38,8 @@ export default function ViewStock(){
                 </p>
             </div>
             );
+        }else{
+            return("");
         }
     }
 
