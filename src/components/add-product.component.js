@@ -14,6 +14,7 @@ export default function AddProduct(){
     const [companyName, setCompanyName]= useState("");
     const [brandName, setBrandName] = useState("");
     const [productGroup, setProductGroup] = useState("");
+    const [stock, setStock] = useState(0);
 
 
     function onChangeProductId(e){
@@ -31,6 +32,9 @@ export default function AddProduct(){
     function onChangeProductGroup(e){
         setProductGroup(e.target.value)
     }
+    function onChangeStock(e){
+        setStock(e.target.value)
+    }
     function onSubmitProductData(e){
         e.preventDefault();
         const productData = {
@@ -38,7 +42,8 @@ export default function AddProduct(){
             productName,
             companyName,
             brandName,
-            productGroup
+            productGroup, 
+            stock
         };
         axios.post(`http://localhost:5000/add-new/${username}/${userid}`, productData)
         .then(res=>window.alert(res.data))
@@ -68,6 +73,10 @@ export default function AddProduct(){
                     <div className="form-group">
                         <label>Product Group</label>
                         <input type="text" onChange={onChangeProductGroup} className="form-control"/>
+                    </div>
+                    <div className="form-group">
+                        <label>Ready stock</label>
+                        <input type="text" onChange={onChangeStock} className="form-control"/>
                     </div>
                     <div>
                         <button type="submit" className="btn btn-primary">Add new product</button>
