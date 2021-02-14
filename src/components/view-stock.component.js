@@ -21,7 +21,7 @@ export default function ViewStock(){
     function onSubmitStockQuery(e){
         e.preventDefault();
         axios.get(`http://localhost:5000/view-stock/${productId}/${username}/${userid}`)
-        .then(d=>window.alert(d.data.productName))
+        .then(d=>setProduct(d.data))
         .catch(err=>window.alert(err))
     }
 
@@ -37,6 +37,16 @@ export default function ViewStock(){
                 </div>
                 <button className="btn btn-primary" type="submit">View Stock</button>
             </form>
+            <div className="pt-5">
+                <p>
+                    Product ID: {product.productId}<br/> 
+                    Product Name: {product.productName} <br/>
+                    Company Name: {product.companyName} <br/>
+                    Brand Name: {product.brandName} <br/>
+                    Stock: {product.stock}
+                </p>
+
+            </div>
           
         </div>
     );
