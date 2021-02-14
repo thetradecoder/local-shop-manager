@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import 'jquery/dist/jquery';
@@ -25,6 +25,22 @@ export default function ViewStock(){
         .catch(err=>window.alert(err))
     }
 
+    function showStock() {
+        if(product){
+            return(
+                <div className="pt-5">
+                <p>
+                    Product ID: <span className="text-danger"> {product.productId} </span><br/> 
+                    Product Name: <span className="text-primary"> {product.productName} </span> <br/>
+                    Company Name: <span className="text-danger"> {product.companyName} </span> <br/>
+                    Brand Name: <span className="text-danger">{product.brandName} </span><br/>
+                    <strong>Stock: <span className="text-danger"> {product.stock}</span></strong>
+                </p>
+            </div>
+            );
+        }
+    }
+
 
   
     return(
@@ -37,16 +53,11 @@ export default function ViewStock(){
                 </div>
                 <button className="btn btn-primary" type="submit">View Stock</button>
             </form>
-            <div className="pt-5">
-                <p>
-                    Product ID: {product.productId}<br/> 
-                    Product Name: {product.productName} <br/>
-                    Company Name: {product.companyName} <br/>
-                    Brand Name: {product.brandName} <br/>
-                    Stock: {product.stock}
-                </p>
 
+            <div>
+                {showStock()}
             </div>
+            
           
         </div>
     );
