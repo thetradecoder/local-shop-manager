@@ -33,7 +33,7 @@ export default function ViewProductList(){
 
  
     return(
-        <div>
+        <div className="body-part">
             <div>
                 <h1>Product List</h1>
             </div>
