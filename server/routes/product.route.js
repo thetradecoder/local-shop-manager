@@ -14,7 +14,7 @@ router.route('/add-new/:username/:userid')
 router.route('/view-product-list/:username/:userid')
 .get((req, res)=>{
     const {username, userid} = req.params;
-     Product.find({username, userid}, {productId:true, productName:true})
+     Product.find({username, userid}, {productId:true, productName:true, brandName:true, stock:true})
     .then(data=>res.send(data))
     .catch(err=>res.send(err))
 });
@@ -22,7 +22,7 @@ router.route('/view-product-list/:username/:userid')
 router.route('/view-stock/:productId/:username/:userid')
 .get((req, res)=>{
     const {productId, username, userid} = req.params;    
-    Product.findOne({productId}, {productId:true, productName:true, companyName:true, brandName:true, productGroup:true, stock:true})
+    Product.findOne({productId, username, userid}, {productId:true, productName:true, companyName:true, brandName:true, productGroup:true, stock:true})
     .then(data=>res.send(data))
     .catch(err=>res.send(err))
 });

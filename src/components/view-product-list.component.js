@@ -14,11 +14,11 @@ export default function ViewProductList(){
 
     useEffect(()=>{
         axios.get(`http://localhost:5000/view-product-list/${username}/${userid}`)
-        .then(d=>setProductList(d))
+        .then(d=>setProductList(d.data))
         .catch(err=>window.alert(err))
     })
 
-    const list = ()=>{
+    function list(){
         productList.map((e,i)=>{
             return(
                 <tr>
@@ -38,7 +38,7 @@ export default function ViewProductList(){
                 <h1>Product List</h1>
             </div>
             <table>
-              {list}
+              {list()}
             </table>
         </div>
     );
