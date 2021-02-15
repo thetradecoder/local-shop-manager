@@ -14,31 +14,37 @@ export default function ViewProductList(){
 
     useEffect(()=>{
         axios.get(`http://localhost:5000/view-product-list/${username}/${userid}`)
-        .then(d=>setProductList(d.data))
+        .then(d=>setProductList(d.data))        
         .catch(err=>window.alert(err))
     })
 
-    function list(){
-        productList.map((e,i)=>{
-            return(
-                <tr>
-                    <td>{e.productId}</td>
-                    <td>{e.productName}</td>
-                    <td>{e.brandName}</td>
-                    <td>{e.stock}</td>
-                </tr>
-            );
-        })
-    }
+    const list =  productList.map((e,i)=>{
+        return(
+       
+            <tr>
+                <td>{e.productId}</td>
+                <td>{e.productName}</td>                
+                <td>{e.stock}</td>                
+            </tr>
+         
+        );
+    });
 
- 
+    
     return(
         <div className="body-part">
             <div>
                 <h1>Product List</h1>
             </div>
-            <table>
-              {list()}
+            <table className="table table-striped">
+                <thead>
+                    <th>Product ID </th>
+                    <th>Product Name </th>
+                    <th>Stock Position </th>
+                </thead>
+                <tbody>
+                    {list}
+                </tbody>
             </table>
         </div>
     );
