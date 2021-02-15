@@ -24,6 +24,12 @@ export default function ViewStock(){
         .then(d=>setProduct(d.data))
         .catch(err=>window.alert(err))
     }
+    function onClickBuyMore(){
+        window.location = (`/buy/${productId}/${username}/${userid}`);
+    }
+    function onClickSellNow(){
+        window.location = (`/sell/${productId}/${username}/${userid}`);
+    }
 
     function showStock() {
         if(product.productId){
@@ -34,6 +40,12 @@ export default function ViewStock(){
                     Product Name: <span className="text-primary"> {product.productName} </span> <br/>
                     Company Name: <span className="text-danger"> {product.companyName} </span> <br/>                    
                     <strong>Stock: <span className="text-danger"> {product.stock}</span></strong>
+                    <div className="pt-3">
+                        <div className="btn-group">
+                            <button className="btn btn-primary" onClick={onClickBuyMore}>Buy more</button>
+                            <button className="btn btn-success" onClick={onClickSellNow}>Sell now</button>
+                        </div>
+                    </div>
                 </p>
             </div>
             );
