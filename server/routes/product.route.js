@@ -4,10 +4,10 @@ const Product = require('../models/product.model');
 router.route('/add-new/:username/:userid')
 .post((req, res)=>{
     const {username, userid}=req.params;
-    const {productId, productName, companyName, brandName, productGroup}= req.body;
-    const productData = new Product({productId, productName, companyName, brandName, productGroup, username, userid});
+    const {productId, productName, companyName, brandName, productGroup, stock}= req.body;
+    const productData = new Product({productId, productName, companyName, brandName, productGroup, stock, username, userid});
     productData.save()
-    .then(data=>res.send(data))
+    .then(()=>res.send(`${brandName} ${productName} added!`))
     .catch(err=>res.send('Operation Failed!'+err))
 });
 
