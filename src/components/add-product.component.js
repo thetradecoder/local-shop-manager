@@ -60,32 +60,32 @@ export default function AddProduct(){
                 <form onSubmit={onSubmitProductData}>
                     <div className="form-group">
                         <label>Product ID</label>
-                        <input type="text" onChange={onChangeProductId} className="form-control"/>
+                        <input type="text" onChange={onChangeProductId} className="form-control" required/>
                     </div>
                     <div className="form-group">
                         <label>Product Name</label>
-                        <input type="text" onChange={onChangeProductName} className="form-control"/>
+                        <input type="text" onChange={onChangeProductName} className="form-control" required/>
                     </div>
                     <div className="form-group">
                         <label>Brand Name</label>
-                        <input type="text" onChange={onChangeBrandName} className="form-control"/>
+                        <input type="text" onChange={onChangeBrandName} className="form-control" required/>
                     </div>
                     <div className="form-group">
                         <label>Size</label>
-                        <input type="text" onChange={onChangeSize} className="form-control"/>
+                        <input type="text" onChange={onChangeSize} className="form-control" required/>
                     </div>
                     <div className="form-group">
                         <label>Company Name</label>
-                        <input type="text" onChange={onChangeCompanyName} className="form-control"/>
+                        <input type="text" onChange={onChangeCompanyName} className="form-control" required/>
                     </div>
                     
                     <div className="form-group">
                         <label>Product Group</label>
-                        <input type="text" onChange={onChangeProductGroup} className="form-control"/>
+                        <input type="text" onChange={onChangeProductGroup} className="form-control" required/>
                     </div>
                     <div className="form-group">
-                        <label>Ready stock</label>
-                        <input type="text" onChange={onChangeStock} className="form-control"/>
+                        <label>Ready Stock</label>
+                        <input type="text" onChange={onChangeStock} className="form-control" required/>
                     </div>
                     <div>
                         <button type="submit" className="btn btn-primary">Add new product</button>
