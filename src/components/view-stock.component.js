@@ -25,10 +25,10 @@ export default function ViewStock(){
         .catch(err=>window.alert(err))
     }
     function onClickBuyMore(){
-        window.location = (`/buy/${productId}/${username}/${userid}`);
+        window.location = (`/buy/${productId}`);
     }
     function onClickSellNow(){
-        window.location = (`/sell/${productId}/${username}/${userid}`);
+        window.location = (`/sell/${productId}`);
     }
 
     function showStock() {
