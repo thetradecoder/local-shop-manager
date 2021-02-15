@@ -11,6 +11,7 @@ const userid = localStorage.getItem('userid');
 export default function AddProduct(){
     const [productId, setProductId] = useState("");
     const [productName, setProductName]= useState("");
+    const [size, setSize] =  useState("");
     const [companyName, setCompanyName]= useState("");
     const [brandName, setBrandName] = useState("");
     const [productGroup, setProductGroup] = useState("");
@@ -29,6 +30,9 @@ export default function AddProduct(){
     function onChangeBrandName(e){
         setBrandName(e.target.value)
     }
+    function onChangeSize(e){
+        setSize(e.target.value)
+    }
     function onChangeProductGroup(e){
         setProductGroup(e.target.value)
     }
@@ -39,7 +43,7 @@ export default function AddProduct(){
         e.preventDefault();
         const productData = {
             productId,
-            productName,
+            productName:`${productName}-${brandName}-${size}`,
             companyName,
             brandName,
             productGroup, 
@@ -55,7 +59,7 @@ export default function AddProduct(){
             <div>
                 <form onSubmit={onSubmitProductData}>
                     <div className="form-group">
-                        <label>Product Id</label>
+                        <label>Product ID</label>
                         <input type="text" onChange={onChangeProductId} className="form-control"/>
                     </div>
                     <div className="form-group">
@@ -63,13 +67,18 @@ export default function AddProduct(){
                         <input type="text" onChange={onChangeProductName} className="form-control"/>
                     </div>
                     <div className="form-group">
-                        <label>Company Name</label>
-                        <input type="text" onChange={onChangeCompanyName} className="form-control"/>
-                    </div>
-                    <div className="form-group">
                         <label>Brand Name</label>
                         <input type="text" onChange={onChangeBrandName} className="form-control"/>
                     </div>
+                    <div className="form-group">
+                        <label>Size</label>
+                        <input type="text" onChange={onChangeSize} className="form-control"/>
+                    </div>
+                    <div className="form-group">
+                        <label>Company Name</label>
+                        <input type="text" onChange={onChangeCompanyName} className="form-control"/>
+                    </div>
+                    
                     <div className="form-group">
                         <label>Product Group</label>
                         <input type="text" onChange={onChangeProductGroup} className="form-control"/>
