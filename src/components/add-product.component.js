@@ -59,7 +59,7 @@ export default function AddProduct(){
             <div>                
                 <form onSubmit={onSubmitProductData}>
                     <div className="d-flex flex-wrap">
-                        <div className="w-min-200 pr-1">
+                        <div className="w-min-200 pr-2">
                             <div className="form-group">
                                 <label>Product ID</label>
                                 <input type="text" onChange={onChangeProductId} className="form-control" required/>
