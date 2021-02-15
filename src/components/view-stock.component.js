@@ -50,7 +50,7 @@ export default function ViewStock(){
             <h1>View Stock</h1>
             <form onSubmit={onSubmitStockQuery}>
                 <div className="form-group">
-                    <label>Input Product Id</label>
+                    <label>Insert a Product ID</label>
                     <input type="text" onChange={onChangeProductId} className="form-control"/>
                 </div>
                 <button className="btn btn-primary" type="submit">View Stock</button>
