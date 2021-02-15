@@ -56,7 +56,7 @@ export default function AddProduct(){
     return(
         <div className="body-part">
             <div><h1>Enlist a new product</h1></div>
-            <div>
+            <div className='w-max-300'>
                 <form onSubmit={onSubmitProductData}>
                     <div className="form-group">
                         <label>Product ID</label>
