@@ -43,7 +43,7 @@ export default function AddProduct(){
         e.preventDefault();
         const productData = {
             productId,
-            productName:`${productName}-${brandName}-${size}`,
+            productName:`${brandName}-${productName}-${size}`,
             companyName,
             brandName,
             productGroup, 

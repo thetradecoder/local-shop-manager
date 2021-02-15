@@ -7,8 +7,8 @@ router.route('/add-new/:username/:userid')
     const {productId, productName, companyName, brandName, productGroup, stock}= req.body;
     const productData = new Product({productId, productName, companyName, brandName, productGroup, stock, username, userid});
     productData.save()
-    .then(()=>res.send(`${brandName} ${productName} added!`))
-    .catch(err=>res.send('Operation Failed!'+err))
+    .then(()=>res.send(`${productName} added!`))
+    .catch(err=>res.send('Operation Failed! Product exists!'))
 });
 
 router.route('/view-product-list/:username/:userid')

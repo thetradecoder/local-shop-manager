@@ -32,8 +32,7 @@ export default function ViewStock(){
                 <p>
                     Product ID: <span className="text-danger"> {product.productId} </span><br/> 
                     Product Name: <span className="text-primary"> {product.productName} </span> <br/>
-                    Company Name: <span className="text-danger"> {product.companyName} </span> <br/>
-                    Brand Name: <span className="text-danger">{product.brandName} </span><br/>
+                    Company Name: <span className="text-danger"> {product.companyName} </span> <br/>                    
                     <strong>Stock: <span className="text-danger"> {product.stock}</span></strong>
                 </p>
             </div>
