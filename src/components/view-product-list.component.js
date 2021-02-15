@@ -24,9 +24,10 @@ export default function ViewProductList(){
             <tr>
                 <td>{e.productId}</td>
                 <td>{e.productName}</td>                
-                <td>{e.stock}</td>                
-            </tr>
-         
+                <td>{e.stock}</td>
+                <td><a href={`/buy/${e.productId}`}>Buy</a></td>
+                <td><a href={`/sell/${e.productId}`}>Sell</a></td>
+            </tr>         
         );
     });
 
@@ -41,6 +42,8 @@ export default function ViewProductList(){
                     <th>Product ID </th>
                     <th>Product Name </th>
                     <th>Stock Position </th>
+                    <th>Buy</th>
+                    <th>Sell</th>
                 </thead>
                 <tbody>
                     {list}
