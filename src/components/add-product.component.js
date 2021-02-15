@@ -56,36 +56,42 @@ export default function AddProduct(){
     return(
         <div className="body-part">
             <div><h1>Enlist a new product</h1></div>
-            <div className='w-max-300'>
+            <div>                
                 <form onSubmit={onSubmitProductData}>
-                    <div className="form-group">
-                        <label>Product ID</label>
-                        <input type="text" onChange={onChangeProductId} className="form-control" required/>
-                    </div>
-                    <div className="form-group">
-                        <label>Product Name</label>
-                        <input type="text" onChange={onChangeProductName} className="form-control" required/>
-                    </div>
-                    <div className="form-group">
-                        <label>Brand Name</label>
-                        <input type="text" onChange={onChangeBrandName} className="form-control" required/>
-                    </div>
-                    <div className="form-group">
-                        <label>Size</label>
-                        <input type="text" onChange={onChangeSize} className="form-control" required/>
-                    </div>
-                    <div className="form-group">
-                        <label>Company Name</label>
-                        <input type="text" onChange={onChangeCompanyName} className="form-control" required/>
-                    </div>
-                    
-                    <div className="form-group">
-                        <label>Product Group</label>
-                        <input type="text" onChange={onChangeProductGroup} className="form-control" required/>
-                    </div>
-                    <div className="form-group">
-                        <label>Ready Stock</label>
-                        <input type="text" onChange={onChangeStock} className="form-control" required/>
+                    <div className="d-flex">
+                        <div className="w-max-300">
+                            <div className="form-group">
+                                <label>Product ID</label>
+                                <input type="text" onChange={onChangeProductId} className="form-control" required/>
+                            </div>
+                            <div className="form-group">
+                                <label>Product Name</label>
+                                <input type="text" onChange={onChangeProductName} className="form-control" required/>
+                            </div>
+                            <div className="form-group">
+                                <label>Brand Name</label>
+                                <input type="text" onChange={onChangeBrandName} className="form-control" required/>
+                            </div>
+                            <div className="form-group">
+                                <label>Size</label>
+                                <input type="text" onChange={onChangeSize} className="form-control" required/>
+                            </div>
+                        </div>
+                        <div className="w-max-300">
+                            <div className="form-group">
+                                <label>Company Name</label>
+                                <input type="text" onChange={onChangeCompanyName} className="form-control" required/>
+                            </div>
+                        
+                            <div className="form-group">
+                                <label>Product Group</label>
+                                <input type="text" onChange={onChangeProductGroup} className="form-control" required/>
+                            </div>
+                            <div className="form-group">
+                                <label>Ready Stock</label>
+                                <input type="text" onChange={onChangeStock} className="form-control" required/>
+                            </div>                            
+                        </div>
                     </div>
                     <div>
                         <button type="submit" className="btn btn-primary">Add new product</button>
