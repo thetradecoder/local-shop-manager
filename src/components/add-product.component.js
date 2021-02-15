@@ -58,8 +58,8 @@ export default function AddProduct(){
             <div><h1>Enlist a new product</h1></div>
             <div>                
                 <form onSubmit={onSubmitProductData}>
-                    <div className="d-flex">
-                        <div className="w-max-300">
+                    <div className="d-flex flex-wrap">
+                        <div className="w-min-200 pr-1">
                             <div className="form-group">
                                 <label>Product ID</label>
                                 <input type="text" onChange={onChangeProductId} className="form-control" required/>
@@ -77,7 +77,7 @@ export default function AddProduct(){
                                 <input type="text" onChange={onChangeSize} className="form-control" required/>
                             </div>
                         </div>
-                        <div className="w-max-300">
+                        <div className="w-min-200">
                             <div className="form-group">
                                 <label>Company Name</label>
                                 <input type="text" onChange={onChangeCompanyName} className="form-control" required/>
