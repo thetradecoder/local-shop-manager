@@ -22,19 +22,19 @@ export default function AddProduct(){
         setProductId(e.target.value);
     }
     function onChangeProductName(e){
-        setProductName(e.target.value)
+        setProductName(e.target.value.toLowerCase())
     }
     function onChangeCompanyName(e){
-        setCompanyName(e.target.value)
+        setCompanyName(e.target.value.toLowerCase())
     }
     function onChangeBrandName(e){
-        setBrandName(e.target.value)
+        setBrandName(e.target.value.toLowerCase())
     }
     function onChangeSize(e){
-        setSize(e.target.value)
+        setSize(e.target.value.toLowerCase())
     }
     function onChangeProductGroup(e){
-        setProductGroup(e.target.value)
+        setProductGroup(e.target.value.toLowerCase())
     }
     function onChangeStock(e){
         setStock(e.target.value)
