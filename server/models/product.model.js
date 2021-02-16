@@ -13,7 +13,7 @@ const ProductSchema = new Schema({
         {
             date:{type:Date},
             quantity:{type:Number},
-            unitePrice:{type:Number},
+            unitPrice:{type:Number},
             totalPrice:{type:Number},
             payment:{type:String},
             remarks:{type:String}

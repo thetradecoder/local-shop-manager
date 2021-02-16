@@ -30,8 +30,8 @@ export default function Buy(){
     function onSubmitBuyNow(e){
         e.preventDefault();
         const buyHistory ={            
-            quantity,           
-            totalPrice
+            quantity:0,        
+            totalPrice:0
         }
 
         axios.put(`http://localhost:5000/buy/${productId}/${username}/${userid}`, buyHistory)
