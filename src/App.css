@@ -84,3 +84,6 @@ html, body{
 .w-min-200{
   min-width: 200px;
 }
+.text-24{
+  font-size:24px;
+}
