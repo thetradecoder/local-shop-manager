@@ -27,6 +27,18 @@ export default function Buy(){
         .catch(err=>window.alert(err));
     });
 
+    function onSubmitBuyNow(e){
+        e.preventDefault();
+        const buyHistory ={            
+            quantity,           
+            totalPrice
+        }
+
+        axios.put(`http://localhost:5000/buy/${productId}/${username}/${userid}`, buyHistory)
+        .then(res=>window.alert(res.data))
+        .catch(err=>window.alert(err))
+    }
+
 
 
     return(
@@ -36,7 +48,7 @@ export default function Buy(){
                 Current Stock: {product.stock}</p>
             </div>
             <div>
-                <form>
+                <form onSubmit={onSubmitBuyNow}>
                     <h1>Buy Now</h1>
                     <div className="form-group">
                         <label>Quantity: </label>
