@@ -36,6 +36,7 @@ export default function Buy(){
 
         axios.post(`http://localhost:5000/buy/${productId}/${username}/${userid}`, buyHistory)
         .then(res=>window.alert(res.data))
+        .then(()=>console.log(buyHistory))
         .catch(err=>window.alert(err))
     }
 

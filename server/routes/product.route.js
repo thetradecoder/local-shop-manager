@@ -49,6 +49,7 @@ router.route('/buy/:productId/:username/:userid')
     
     Product.findOneAndUpdate({productId, username, userid}, {$push:{buyHistory}})
     .then(data=>res.status(200).send('Buy completed!'))
+    .then(()=>console.log(buyHistory))
     .catch(err=>res.send(err))
 });
 
