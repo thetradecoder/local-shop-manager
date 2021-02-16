@@ -17,10 +17,10 @@ export default function Buy(){
         .catch(err=>window.alert(err));
     })
     return(
-        <div>
+        <div className="body-part">
             <div>
                 <p>Product Details:  {product.productId}-{product.productName}, <br/>
-                Stock:{product.stock}</p>
+                Current Stock: {product.stock}</p>
             </div>
 
 

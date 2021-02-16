@@ -8,6 +8,7 @@ import Logout from './components/logout.component';
 import UserForm from './components/signup.component';
 import ViewProductList from './components/view-product-list.component';
 import ViewStock from './components/view-stock.component';
+import Buy from './components/buy-product.component';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path="/add-product" component={AddProduct}/>
       <Route path="/view-list" component={ViewProductList}/>
       <Route path="/view-stock" component={ViewStock}/>
+      <Route path="/buy/" component={Buy}/>
     </Router>
   );
 }

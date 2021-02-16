@@ -34,6 +34,13 @@ router.route('/view-position/:productId/:username/:userid')
     .then(data=>res.send(data))
     .catch(err=>res.send(err))
 });
+router.route('/buy/:productId/:username/:userid')
+.get((req, res)=>{
+    const {username, userid, productId} = req.params;
+    Product.findOne({productId, username, userid}, {productId:true, productName:true, stock:true})
+    .then(data=>res.send(data))
+    .catch(err=>res.send('request declined'))
+})
 
 router.route('/buy/:productId/:username/:userid')
 .put((req, res)=>{
