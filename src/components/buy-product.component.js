@@ -29,12 +29,12 @@ export default function Buy(){
 
     function onSubmitBuyNow(e){
         e.preventDefault();
-        const buyHistory ={            
+        const buyHistory = {            
             quantity:0,        
             totalPrice:0
         }
 
-        axios.put(`http://localhost:5000/buy/${productId}/${username}/${userid}`, buyHistory)
+        axios.post(`http://localhost:5000/buy/${productId}/${username}/${userid}`, buyHistory)
         .then(res=>window.alert(res.data))
         .catch(err=>window.alert(err))
     }

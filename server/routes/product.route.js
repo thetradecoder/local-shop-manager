@@ -43,7 +43,7 @@ router.route('/buy/:productId/:username/:userid')
 })
 
 router.route('/buy/:productId/:username/:userid')
-.put((req, res)=>{
+.post((req, res)=>{
     const {username, userid, productId} =  req.params;
     const {buyHistory} = req.body;
     
