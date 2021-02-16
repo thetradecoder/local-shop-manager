@@ -51,6 +51,9 @@ export default function Buy(){
                         <label>Total price / Buy value: </label>
                         <input type="number" className="form-control" value={totalPrice} disabled/>
                     </div>
+                    <div>
+                        <button className="btn btn-primary">Buy {quantity} now</button>
+                    </div>
                 </form>
             </div>
 
