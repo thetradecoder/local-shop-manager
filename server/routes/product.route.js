@@ -48,8 +48,7 @@ router.route('/buy/:productId/:username/:userid')
     const { quantity, totalPrice } = req.body;
     
     Product.findOneAndUpdate({productId, username, userid}, {$push:{buyHistory:{quantity, totalPrice}}})
-    .then(data=>res.status(200).send('Buy completed!'))
-    .then(()=>console.log(req.body))
+    .then(data=>res.status(200).send('Buy completed!'))    
     .catch(err=>res.send(err))
 });
 
