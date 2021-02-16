@@ -40,11 +40,11 @@ export default function Buy(){
                     <h1>Buy Now</h1>
                     <div className="form-group">
                         <label>Quantity: </label>
-                        <input type="number" className="form-control" onChange={onChangeQuantity}/>
+                        <input type="number" className="form-control" onChange={onChangeQuantity} required/>
                     </div>
                     <div className="form-group">
                         <label>Unit Price: </label>
-                        <input type="number" className="form-control" onChange={onChangeUnitPrice}/>
+                        <input type="number" className="form-control" onChange={onChangeUnitPrice} required/>
                     </div>
                     
                     <div className="form-group">
