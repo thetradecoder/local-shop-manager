@@ -23,7 +23,7 @@ export default function ViewProductList(){
         .catch(err=>window.alert(err))
     })
 
-    const list =  productList.filter((e)=>e.productGroup===filterBy).map((e,i)=>{
+    const list =  productList.filter((e)=>e.productName.match(filterBy)).map((e,i)=>{
         
         return(
        
