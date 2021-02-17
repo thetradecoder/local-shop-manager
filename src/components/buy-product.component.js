@@ -85,7 +85,7 @@ export default function Buy(){
                     
                     <div className="form-group">
                         <label>Note: </label>
-                        <input type="number" className="form-control" onChange={onChangeRemarks}/>
+                        <input type="text" className="form-control" onChange={onChangeRemarks}/>
                     </div>
                     <div>
                         <button className="btn btn-primary">Buy {quantity} now</button>

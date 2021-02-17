@@ -14,12 +14,20 @@ export default function Sell(){
     const [unitPrice, setUnitPrice] =  useState(0);
     const [quantity, setQuantity] = useState(0);
     const totalPrice = unitPrice*quantity;
+    const [payment, setPayment] = useState("");
+    const [remarks, setRemarks] =  useState("");
 
     function onChangeQuantity(e){
         setQuantity(e.target.value)
     }
     function onChangeUnitPrice(e){
         setUnitPrice(e.target.value)
+    }
+    function onChangePayment(e){
+        setPayment(e.target.value)
+    }
+    function onChangeRemarks(e){
+        setRemarks(e.target.value)
     }
 
     useEffect(()=>{
@@ -34,7 +42,10 @@ export default function Sell(){
         if(quantity<=product.stock){
         const salesHistory = {            
             quantity,        
-            totalPrice
+            unitPrice,
+            totalPrice,
+            payment,
+            remarks            
         }
 
         axios.put(`http://localhost:5000/sell/${productId}/${username}/${userid}`, salesHistory)
@@ -51,7 +62,7 @@ export default function Sell(){
             </div>
             <div>
                 <form onSubmit={onSubmitSellNow}>
-                    <h1>Sell Now</h1>
+                    <h1>Sell Now</h1>                    
                     <div className="form-group">
                         <label>Quantity: </label>
                         <input type="number" className="form-control" onChange={onChangeQuantity} required/>
@@ -65,8 +76,23 @@ export default function Sell(){
                         <label>Total price / Sell value: </label>
                         <input type="number" className="form-control" value={totalPrice} disabled/>
                     </div>
-                    <div>
-                        <button className="btn btn-primary">Sell {quantity} now</button>
+                    
+                    <div className="form-group">
+                        <label>Payment: </label>
+                        <input type="text" className="form-control" onChange={onChangePayment} required/>
+                    </div>
+                    
+                    <div className="form-group">
+                        <label>Note: </label>
+                        <input type="text" className="form-control" onChange={onChangeRemarks}/>
+                    </div>
+                    <div className="d-flex justify-content-between">
+                        <div>
+                            <button type="submit" className="btn btn-primary">Sell {quantity} now</button>
+                        </div>
+                        <div>
+                            <a className="btn btn-warning" href='/view-list'>Go to list</a>
+                        </div>
                     </div>
                 </form>
             </div>            
