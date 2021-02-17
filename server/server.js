@@ -12,7 +12,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 const dbUri = process.env.MONGO_URI;
-mongoose.connect(dbUri, {useNewUrlParser:true, useUnifiedTopology:true, useCreateIndex:true, useFindAndModify:false})
+mongoose.connect(dbUri, {useNewUrlParser:true, useUnifiedTopology:true, useCreateIndex:true, autoIndex:true, useFindAndModify:false})
 .then(()=>console.log('DB Connected!'))
 .catch(err=>console.log('DB connection failed!'));
 
