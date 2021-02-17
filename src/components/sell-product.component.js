@@ -30,7 +30,8 @@ export default function Sell(){
 
     function onSubmitSellNow(e){
         e.preventDefault();
-        
+
+        if(quantity<=product.stock){
         const salesHistory = {            
             quantity,        
             totalPrice
@@ -39,7 +40,8 @@ export default function Sell(){
         axios.put(`http://localhost:5000/sell/${productId}/${username}/${userid}`, salesHistory)
         .then(res=>window.alert(res.data))        
         .catch(err=>window.alert(err))
-    }
+    }else{window.alert(`Sorry! There is not enough stock. You can sell only ${product.stock || 0} product.` )}
+}
 
     return(
         <div className="body-part">
