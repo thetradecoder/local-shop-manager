@@ -52,8 +52,8 @@ export default function ViewProductList(){
                         <input type="text" onChange={onChangeFilterBy} value={filterBy} placeholder="Type a product name here" className="form-control" />
                     </div>
                     <div>
-                        <label>Search lowest stock range: </label>
-                        <input type="number" onChange={onChangeFilterStock} placeholder="Type lowest stock range" className="form-control" />
+                        <label>Search by below stock range: </label>
+                        <input type="number" onChange={onChangeFilterStock} min="0" placeholder="Type lowest stock range" className="form-control" />
                     </div>
                 </div>
             </div>
