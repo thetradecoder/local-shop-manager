@@ -31,7 +31,8 @@ export default function Buy(){
 
     function onSubmitBuyNow(e){
         e.preventDefault();
-        const buyHistory = {            
+        
+        const buyHistory = {               
             quantity,        
             totalPrice
         }
