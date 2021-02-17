@@ -62,21 +62,22 @@ export default function Sell(){
             </div>
             <div>
                 <form onSubmit={onSubmitSellNow}>
-                    <h1>Sell Now</h1>                    
-                    <div className="form-group">
-                        <label>Quantity: </label>
-                        <input type="number" className="form-control" onChange={onChangeQuantity} required/>
+                    <h1>Sell Now</h1>
+                    <div className="d-flex flex-wrap">           
+                        <div className="form-group">
+                            <label>Quantity: </label>
+                            <input type="number" className="form-control" onChange={onChangeQuantity} required/>
+                        </div>
+                        <div className="form-group">
+                            <label>Unit Price: </label>
+                            <input type="number" className="form-control" onChange={onChangeUnitPrice} required/>
+                        </div>
+                        
+                        <div className="form-group">
+                            <label>Total price / Sell value: </label>
+                            <input type="number" className="form-control" value={totalPrice} disabled/>
+                        </div>
                     </div>
-                    <div className="form-group">
-                        <label>Unit Price: </label>
-                        <input type="number" className="form-control" onChange={onChangeUnitPrice} required/>
-                    </div>
-                    
-                    <div className="form-group">
-                        <label>Total price / Sell value: </label>
-                        <input type="number" className="form-control" value={totalPrice} disabled/>
-                    </div>
-                    
                     <div className="form-group">
                         <label>Payment: </label>
                         <input type="text" className="form-control" onChange={onChangePayment} required/>

@@ -64,18 +64,20 @@ export default function Buy(){
             <div>
                 <form onSubmit={onSubmitBuyNow}>
                     <h1>Buy Now</h1>
-                    <div className="form-group">
-                        <label>Quantity: </label>
-                        <input type="number" className="form-control" onChange={onChangeQuantity} required/>
-                    </div>
-                    <div className="form-group">
-                        <label>Unit Price: </label>
-                        <input type="number" className="form-control" onChange={onChangeUnitPrice} required/>
-                    </div>
-                    
-                    <div className="form-group">
-                        <label>Total price / Buy value: </label>
-                        <input type="number" className="form-control" value={totalPrice} disabled/>
+                    <div className="d-flex flex-wrap">
+                        <div className="form-group">
+                            <label>Quantity: </label>
+                            <input type="number" className="form-control" onChange={onChangeQuantity} required/>
+                        </div>
+                        <div className="form-group">
+                            <label>Unit Price: </label>
+                            <input type="number" className="form-control" onChange={onChangeUnitPrice} required/>
+                        </div>
+                        
+                        <div className="form-group">
+                            <label>Total price / Buy value: </label>
+                            <input type="number" className="form-control" value={totalPrice} disabled/>
+                        </div>
                     </div>
                     
                     <div className="form-group">
