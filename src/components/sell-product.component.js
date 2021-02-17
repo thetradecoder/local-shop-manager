@@ -77,7 +77,8 @@ export default function Sell(){
                             <label>Unit Price: </label>
                             <input type="number" className="form-control" onChange={onChangeUnitPrice} required/>
                         </div>
-                        
+                    </div>
+                    <div className="d-flex flex-wrap">
                         <div className="form-group">
                             <label>Total price / Sell value: </label>
                             <input type="number" className="form-control" value={totalPrice} disabled/>
@@ -88,13 +89,15 @@ export default function Sell(){
                             <input type="text" className="form-control" onChange={onChangePayment} required/>
                         </div>
                     </div>
-                    <div className="form-group">
-                        <label>Customer name/ ID: </label>
-                        <input type="text" className="form-control" onChange={onChangeCustomer}/>
-                    </div>
-                    <div className="form-group">
-                        <label>Note: </label>
-                        <input type="text" className="form-control" onChange={onChangeRemarks}/>
+                    <div className="d-flex flex-wrap">
+                        <div className="form-group">
+                            <label>Customer name/ ID: </label>
+                            <input type="text" className="form-control" onChange={onChangeCustomer}/>
+                        </div>
+                        <div className="form-group">
+                            <label>Note: </label>
+                            <input type="text" className="form-control" onChange={onChangeRemarks}/>
+                        </div>
                     </div>
                     <div className="d-flex justify-content-between">
                         <div>

@@ -78,7 +78,8 @@ export default function Buy(){
                             <label>Unit Price: </label>
                             <input type="number" className="form-control" onChange={onChangeUnitPrice} required/>
                         </div>
-                        
+                    </div>
+                    <div className="d-flex flex-wrap">
                         <div className="form-group">
                             <label>Total price / Buy value: </label>
                             <input type="number" className="form-control" value={totalPrice} disabled/>
@@ -89,14 +90,16 @@ export default function Buy(){
                             <input type="text" className="form-control" onChange={onChangePayment} required/>
                         </div>
                     </div>
-                    <div className="form-group">
-                            <label>Supplier / Dealer: </label>
-                            <input type="text" className="form-control" onChange={onChangeSupplier} required/>
-                        </div>
+                    <div className="d-flex flex-wrap">
+                        <div className="form-group">
+                                <label>Supplier / Dealer: </label>
+                                <input type="text" className="form-control" onChange={onChangeSupplier} required/>
+                            </div>
 
-                    <div className="form-group">
-                        <label>Note: </label>
-                        <input type="text" className="form-control" onChange={onChangeRemarks}/>
+                        <div className="form-group">
+                            <label>Note: </label>
+                            <input type="text" className="form-control" onChange={onChangeRemarks}/>
+                        </div>
                     </div>
                     <div className="d-flex justify-content-between">
                         <div>
