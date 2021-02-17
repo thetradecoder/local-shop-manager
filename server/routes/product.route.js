@@ -47,17 +47,17 @@ router.route('/buy/:productId/:username/:userid')
     const {username, userid, productId} =  req.params;
     const { quantity, totalPrice } = req.body;
     
-    Product.findOneAndUpdate({productId, username, userid}, {$push:{buyHistory:{quantity, totalPrice}}})
-    .then(data=>res.status(200).send('Buy completed!'))    
+    Product.findOneAndUpdate({productId, username, userid}, {$push:{buyHistory:{quantity, totalPrice}}, $inc:{stock:quantity, totalBuyValue:totalPrice}})
+    .then(()=>res.status(200).send('Buy completed!'))    
     .catch(err=>res.send(err))
 });
 
 router.route('/sell/:productId/:username/:userid')
 .put((req, res)=>{
     const {username, userid, productId}= req.params;
-    const {salesHistory} = req.body;
-    Product.findOneAndUpdate({productId, username, userid}, {$push:{salesHistory}, $dec:{stock:salesHistory.quantity}, $inc:{totalSalesValue:salesHistory.totalPrice}})
-    .then(data=>res.status(200).send('Sales completed!'))
+    const {quantity, totalPrice} = req.body;
+    Product.findOneAndUpdate({productId, username, userid}, {$push:{salesHistory}, $dec:{stock:quantity}, $inc:{totalSalesValue:totalPrice}})
+    .then(()=>res.status(200).send('Sales completed!'))
     .catch(err=>res.send(err))
 })
 
