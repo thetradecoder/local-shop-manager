@@ -91,7 +91,7 @@ export default function Sell(){
                             <button type="submit" className="btn btn-primary">Sell {quantity} now</button>
                         </div>
                         <div>
-                            <a className="btn btn-warning" href='/view-list'>Go to list</a>
+                            <a className="btn btn-warning" href='/view-list'>Go Back</a>
                         </div>
                     </div>
                 </form>

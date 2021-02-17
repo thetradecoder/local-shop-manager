@@ -87,8 +87,13 @@ export default function Buy(){
                         <label>Note: </label>
                         <input type="text" className="form-control" onChange={onChangeRemarks}/>
                     </div>
-                    <div>
-                        <button className="btn btn-primary">Buy {quantity} now</button>
+                    <div className="d-flex justify-content-between">
+                        <div>
+                            <button type="submit" className="btn btn-primary">Buy {quantity} now</button>
+                        </div>
+                        <div>
+                            <a className="btn btn-warning" href='/view-list'>Go Back</a>
+                        </div>
                     </div>
                 </form>
             </div>
