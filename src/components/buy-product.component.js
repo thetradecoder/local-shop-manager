@@ -17,6 +17,7 @@ export default function Buy(){
     const totalPrice = unitPrice*quantity;
     const [payment, setPayment] = useState("");
     const [remarks, setRemarks] =  useState("");
+    const [supplier, setSupplier] =  useState("");
 
     function onChangeQuantity(e){
         setQuantity(e.target.value)
@@ -29,6 +30,9 @@ export default function Buy(){
     }
     function onChangeRemarks(e){
         setRemarks(e.target.value)
+    }
+    function onChangeSupplier(e){
+        setSupplier(e.target.value)
     }
     
     useEffect(()=>{
@@ -45,6 +49,7 @@ export default function Buy(){
             unitPrice,  
             totalPrice,
             payment,
+            supplier,
             remarks
         }
 
@@ -78,13 +83,17 @@ export default function Buy(){
                             <label>Total price / Buy value: </label>
                             <input type="number" className="form-control" value={totalPrice} disabled/>
                         </div>
+                                            
+                        <div className="form-group">
+                            <label>Payment: </label>
+                            <input type="text" className="form-control" onChange={onChangePayment} required/>
+                        </div>
                     </div>
-                    
                     <div className="form-group">
-                        <label>Payment: </label>
-                        <input type="text" className="form-control" onChange={onChangePayment} required/>
-                    </div>
-                    
+                            <label>Supplier / Dealer: </label>
+                            <input type="text" className="form-control" onChange={onChangeSupplier} required/>
+                        </div>
+
                     <div className="form-group">
                         <label>Note: </label>
                         <input type="text" className="form-control" onChange={onChangeRemarks}/>

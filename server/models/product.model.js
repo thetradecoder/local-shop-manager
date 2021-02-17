@@ -16,6 +16,7 @@ const ProductSchema = new Schema({
             unitPrice:{type:Number},
             totalPrice:{type:Number},
             payment:{type:String},
+            supplier:{type:String},
             remarks:{type:String}
         }
     ],
@@ -26,8 +27,8 @@ const ProductSchema = new Schema({
             unitePrice:{type:Number},
             totalPrice:{type:Number},
             payment:{type:String},
-            remarks:{type:String},
-            customer:{type:String}
+            customer:{type:String},
+            remarks:{type:String}
         }
     ],
     buyOrderPipeline:[

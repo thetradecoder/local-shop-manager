@@ -16,6 +16,7 @@ export default function Sell(){
     const totalPrice = unitPrice*quantity;
     const [payment, setPayment] = useState("");
     const [remarks, setRemarks] =  useState("");
+    const [customer, setCustomer] = useState("");
 
     function onChangeQuantity(e){
         setQuantity(e.target.value)
@@ -28,6 +29,9 @@ export default function Sell(){
     }
     function onChangeRemarks(e){
         setRemarks(e.target.value)
+    }
+    function onChangeCustomer(e){
+        setCustomer(e.target.value)
     }
 
     useEffect(()=>{
@@ -45,7 +49,8 @@ export default function Sell(){
             unitPrice,
             totalPrice,
             payment,
-            remarks            
+            customer,
+            remarks
         }
 
         axios.put(`http://localhost:5000/sell/${productId}/${username}/${userid}`, salesHistory)
@@ -77,12 +82,16 @@ export default function Sell(){
                             <label>Total price / Sell value: </label>
                             <input type="number" className="form-control" value={totalPrice} disabled/>
                         </div>
+                    
+                        <div className="form-group">
+                            <label>Payment: </label>
+                            <input type="text" className="form-control" onChange={onChangePayment} required/>
+                        </div>
                     </div>
                     <div className="form-group">
-                        <label>Payment: </label>
-                        <input type="text" className="form-control" onChange={onChangePayment} required/>
+                        <label>Customer name/ ID: </label>
+                        <input type="text" className="form-control" onChange={onChangeCustomer}/>
                     </div>
-                    
                     <div className="form-group">
                         <label>Note: </label>
                         <input type="text" className="form-control" onChange={onChangeRemarks}/>
