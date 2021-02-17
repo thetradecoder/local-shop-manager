@@ -45,9 +45,9 @@ router.route('/status/:productId/:username/:userid')
 router.route('/buy/:productId/:username/:userid')
 .put((req, res)=>{
     const {username, userid, productId} =  req.params;
-    const { quantity, totalPrice } = req.body;
+    const { quantity, unitPrice, totalPrice, payment, remarks } = req.body;
 
-    Product.findOneAndUpdate({productId, username, userid}, {$push:{buyHistory:{quantity, totalPrice, date:new Date()}}, $inc:{stock:quantity, totalBuyValue:totalPrice}})
+    Product.findOneAndUpdate({productId, username, userid}, {$push:{buyHistory:{date: new Date(), quantity, unitPrice, totalPrice, payment, remarks}}, $inc:{stock:quantity, totalBuyValue:totalPrice}})
     .then(()=>res.status(200).send(`Bought ${quantity}, Total Amount: ${totalPrice}`))    
     .catch(err=>res.send(err))
 });

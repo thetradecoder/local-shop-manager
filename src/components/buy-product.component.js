@@ -15,12 +15,20 @@ export default function Buy(){
     const [unitPrice, setUnitPrice] = useState(0);
     const [quantity, setQuantity] = useState(0);
     const totalPrice = unitPrice*quantity;
+    const [payment, setPayment] = useState("");
+    const [remarks, setRemarks] =  useState("");
 
     function onChangeQuantity(e){
         setQuantity(e.target.value)
     }
     function onChangeUnitPrice(e){
         setUnitPrice(e.target.value)
+    }
+    function onChangePayment(e){
+        setPayment(e.target.value)
+    }
+    function onChangeRemarks(e){
+        setRemarks(e.target.value)
     }
     
     useEffect(()=>{
@@ -31,10 +39,13 @@ export default function Buy(){
 
     function onSubmitBuyNow(e){
         e.preventDefault();
-        
+
         const buyHistory = {               
-            quantity,        
-            totalPrice
+            quantity,
+            unitPrice,  
+            totalPrice,
+            payment,
+            remarks
         }
 
         axios.put(`http://localhost:5000/buy/${productId}/${username}/${userid}`, buyHistory)
@@ -65,6 +76,16 @@ export default function Buy(){
                     <div className="form-group">
                         <label>Total price / Buy value: </label>
                         <input type="number" className="form-control" value={totalPrice} disabled/>
+                    </div>
+                    
+                    <div className="form-group">
+                        <label>Payment: </label>
+                        <input type="text" className="form-control" onChange={onChangePayment} required/>
+                    </div>
+                    
+                    <div className="form-group">
+                        <label>Note: </label>
+                        <input type="number" className="form-control" onChange={onChangeRemarks}/>
                     </div>
                     <div>
                         <button className="btn btn-primary">Buy {quantity} now</button>
