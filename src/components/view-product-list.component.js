@@ -43,7 +43,7 @@ export default function ViewProductList(){
             <div>
                 <h1>Product List</h1>
                 <p>Search:</p>
-                <input type="text" onChange={onChangeFilterBy} value={filterBy} className="form-control" />
+                <input type="text" onChange={onChangeFilterBy} value={filterBy} placeholder="Type a product name here" className="form-control" />
             </div>
             <table className="table table-striped">
                 <thead>
