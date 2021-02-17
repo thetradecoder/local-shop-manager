@@ -14,7 +14,7 @@ router.route('/add-new/:username/:userid')
 router.route('/view-product-list/:username/:userid')
 .get((req, res)=>{
     const {username, userid} = req.params;
-     Product.find({username, userid}, {productId:true, productName:true, brandName:true, stock:true})
+     Product.find({username, userid}, {productId:true, productName:true, brandName:true, stock:true, productGroup:true})
     .then(data=>res.send(data))
     .catch(err=>res.send(err))
 });

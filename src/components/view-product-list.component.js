@@ -10,6 +10,11 @@ const userid = localStorage.getItem('userid');
 
 export default function ViewProductList(){
     const [productList, setProductList] = useState([]);
+    const [filterBy, setFilterBy] =  useState("");
+
+    function onChangeFilterBy(e){
+        setFilterBy(e.target.value)
+    }
 
 
     useEffect(()=>{
@@ -18,7 +23,8 @@ export default function ViewProductList(){
         .catch(err=>window.alert(err))
     })
 
-    const list =  productList.map((e,i)=>{
+    const list =  productList.filter((e)=>e.productGroup===filterBy).map((e,i)=>{
+        
         return(
        
             <tr>
@@ -36,6 +42,8 @@ export default function ViewProductList(){
         <div className="body-part">
             <div>
                 <h1>Product List</h1>
+                <p>Search:</p>
+                <input type="text" onChange={onChangeFilterBy} value={filterBy} className="form-control" />
             </div>
             <table className="table table-striped">
                 <thead>
