@@ -59,7 +59,7 @@ export default function AddProduct(){
             <div>                
                 <form onSubmit={onSubmitProductData}>
                     <div className="d-flex flex-wrap">
-                        <div className="w-min-200 pr-2">
+                        <div className="w-min-200 pr-2 flex-grow-1">
                             <div className="form-group">
                                 <label>Product ID</label>
                                 <input type="text" onChange={onChangeProductId} className="form-control" required/>
@@ -77,7 +77,7 @@ export default function AddProduct(){
                                 <input type="text" onChange={onChangeSize} className="form-control" required/>
                             </div>
                         </div>
-                        <div className="w-min-200">
+                        <div className="w-min-200 flex-grow-1">
                             <div className="form-group">
                                 <label>Company Name</label>
                                 <input type="text" onChange={onChangeCompanyName} className="form-control" required/>

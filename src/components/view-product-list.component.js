@@ -44,16 +44,16 @@ export default function ViewProductList(){
     
     return(
         <div className="body-part">
-            <div>
-                <h1>Product List</h1>          
+            <div className="bg-teal p-2">
+                <h1 className="text-white">Product List</h1>          
                 <div className="d-flex flex-wrap justify-content-between">
-                    <div className="form-group">
-                        <label>Type a product name:</label>
+                    <div className="form-group flex-grow-1 pr-2">
+                        <label className="text-white">Search by product name:</label>
                         <input type="text" onChange={onChangeFilterBy} value={filterBy} placeholder="Type a product name here" className="form-control" />
                     </div>
-                    <div>
-                        <label>Search by below stock range: </label>
-                        <input type="number" onChange={onChangeFilterStock} min="0" placeholder="Type stock range" className="form-control" />
+                    <div className="form-group">
+                        <label className="text-white">Search by below stock range: </label>
+                        <input type="number" onChange={onChangeFilterStock} min="0"  placeholder="Type stock range" className="form-control" />
                     </div>
                 </div>
             </div>
