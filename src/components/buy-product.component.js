@@ -70,33 +70,33 @@ export default function Buy(){
                 <form onSubmit={onSubmitBuyNow}>
                     <h1>Buy Now</h1>
                     <div className="d-flex flex-wrap">
-                        <div className="form-group">
+                        <div className="form-group flex-grow-1">
                             <label>Quantity: </label>
                             <input type="number" className="form-control" onChange={onChangeQuantity} required/>
                         </div>
-                        <div className="form-group">
+                        <div className="form-group flex-grow-1">
                             <label>Unit Price: </label>
                             <input type="number" className="form-control" onChange={onChangeUnitPrice} required/>
                         </div>
                     </div>
                     <div className="d-flex flex-wrap">
-                        <div className="form-group">
+                        <div className="form-group flex-grow-1">
                             <label>Total price / Buy value: </label>
                             <input type="number" className="form-control" value={totalPrice} disabled/>
                         </div>
                                             
-                        <div className="form-group">
+                        <div className="form-group flex-grow-1">
                             <label>Payment: </label>
                             <input type="text" className="form-control" onChange={onChangePayment} required/>
                         </div>
                     </div>
                     <div className="d-flex flex-wrap">
-                        <div className="form-group">
-                                <label>Supplier / Dealer: </label>
-                                <input type="text" className="form-control" onChange={onChangeSupplier} required/>
-                            </div>
+                        <div className="form-group flex-grow-1">
+                            <label>Supplier / Dealer: </label>
+                            <input type="text" className="form-control" onChange={onChangeSupplier} required/>
+                        </div>
 
-                        <div className="form-group">
+                        <div className="form-group flex-grow-1">
                             <label>Note: </label>
                             <input type="text" className="form-control" onChange={onChangeRemarks}/>
                         </div>
