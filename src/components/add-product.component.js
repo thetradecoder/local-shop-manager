@@ -56,7 +56,7 @@ export default function AddProduct(){
     return(
         <div className="body-part">
             <div><h1>Enlist a new product</h1></div>
-            <div>                
+            <div className="pt-3">                
                 <form onSubmit={onSubmitProductData}>
                     <div className="d-flex flex-wrap">
                         <div className="w-min-200 pr-2 flex-grow-1">
