@@ -46,14 +46,14 @@ export default function ViewProductList(){
         <div className="body-part">
             <div>
                 <h1>Product List</h1>          
-                <div className="d-flex flex-wrap">
+                <div className="d-flex flex-wrap justify-content-between">
                     <div className="form-group">
                         <label>Type a product name:</label>
                         <input type="text" onChange={onChangeFilterBy} value={filterBy} placeholder="Type a product name here" className="form-control" />
                     </div>
                     <div>
                         <label>Search by below stock range: </label>
-                        <input type="number" onChange={onChangeFilterStock} min="0" placeholder="Type lowest stock range" className="form-control" />
+                        <input type="number" onChange={onChangeFilterStock} min="0" placeholder="Type stock range" className="form-control" />
                     </div>
                 </div>
             </div>
