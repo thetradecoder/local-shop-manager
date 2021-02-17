@@ -9,10 +9,12 @@ const username = localStorage.getItem('username');
 const userid = localStorage.getItem('userid');
 const productId = window.location.href.split('/').reverse()[0];
 
+
 export default function Buy(){
     const [product, setProduct] =  useState({});
     const [unitPrice, setUnitPrice] = useState(0);
     const [quantity, setQuantity] = useState(0);
+    const totalPrice = unitPrice*quantity;
 
     function onChangeQuantity(e){
         setQuantity(e.target.value)
@@ -20,7 +22,7 @@ export default function Buy(){
     function onChangeUnitPrice(e){
         setUnitPrice(e.target.value)
     }
-    const totalPrice = unitPrice*quantity;
+    
     useEffect(()=>{
         axios.get(`http://localhost:5000/status/${productId}/${username}/${userid}`)
         .then(d=>setProduct(d.data))
