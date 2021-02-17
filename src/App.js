@@ -9,6 +9,7 @@ import UserForm from './components/signup.component';
 import ViewProductList from './components/view-product-list.component';
 import ViewStock from './components/view-stock.component';
 import Buy from './components/buy-product.component';
+import Sell from './components/sell-product.component';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path="/view-list" component={ViewProductList}/>
       <Route path="/view-stock" component={ViewStock}/>
       <Route path="/buy/" component={Buy}/>
+      <Route path="/sell/" component={Sell}/>
     </Router>
   );
 }

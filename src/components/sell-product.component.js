@@ -21,13 +21,10 @@ export default function Sell(){
     }
 
     useEffect(()=>{
-        axios.get(`http://localhost:5000/sell/${productId}/${username}/${userid}`)
+        axios.get(`http://localhost:5000/status/${productId}/${username}/${userid}`)
         .then(d=>setProduct(d.data))
         .catch(err=>window.alert(err))
     })
-
-
-
 
     return(
         <div className="body-part">

@@ -22,7 +22,7 @@ export default function Buy(){
     }
     const totalPrice = unitPrice*quantity;
     useEffect(()=>{
-        axios.get(`http://localhost:5000/buy/${productId}/${username}/${userid}`)
+        axios.get(`http://localhost:5000/status/${productId}/${username}/${userid}`)
         .then(d=>setProduct(d.data))
         .catch(err=>window.alert(err));
     });

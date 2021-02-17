@@ -34,7 +34,7 @@ router.route('/view-position/:productId/:username/:userid')
     .then(data=>res.send(data))
     .catch(err=>res.send(err))
 });
-router.route('/buy/:productId/:username/:userid')
+router.route('/status/:productId/:username/:userid')
 .get((req, res)=>{
     const {username, userid, productId} = req.params;
     Product.findOne({productId, username, userid}, {productId:true, productName:true, stock:true})
@@ -51,6 +51,8 @@ router.route('/buy/:productId/:username/:userid')
     .then(()=>res.status(200).send('Buy completed!'))    
     .catch(err=>res.send(err))
 });
+
+
 
 router.route('/sell/:productId/:username/:userid')
 .put((req, res)=>{
