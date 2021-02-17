@@ -71,11 +71,11 @@ export default function Sell(){
                     <div className="d-flex flex-wrap">           
                         <div className="form-group flex-grow-1">
                             <label>Quantity: </label>
-                            <input type="number" className="form-control" onChange={onChangeQuantity} required/>
+                            <input type="number" min="1" className="form-control" onChange={onChangeQuantity} required/>
                         </div>
                         <div className="form-group flex-grow-1">
                             <label>Unit Price: </label>
-                            <input type="number" className="form-control" onChange={onChangeUnitPrice} required/>
+                            <input type="number" min=".5" className="form-control" onChange={onChangeUnitPrice} required/>
                         </div>
                     </div>
                     <div className="d-flex flex-wrap">

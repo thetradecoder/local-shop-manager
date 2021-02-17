@@ -38,10 +38,11 @@ export default function SideNav(){
                     <p>By: TradeCoder</p>
                 </div>
                 <div>
-                    <Link to={loginLogoutLink} className="form-control nav-link">{loginLogout()}</Link>             
-                    <Link to="/add-product/" className="form-control nav-link">Add a Product</Link>
-                    <Link to="/view-list" className="form-control nav-link">View List</Link> 
-                    <Link to="/view-stock" className="form-control nav-link">View Stock</Link>                 
+
+                    <Link to="/view-list" className="form-control nav-link">View List</Link>                                
+                    <Link to="/add-product/" className="form-control nav-link">Add a Product</Link>                    
+                    <Link to="/view-stock" className="form-control nav-link">View Stock</Link> 
+                    <Link to={loginLogoutLink} className="form-control nav-link">{loginLogout()}</Link>                  
                 </div>
             </div>
         </div>
