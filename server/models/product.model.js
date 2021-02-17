@@ -8,7 +8,7 @@ const ProductSchema = new Schema({
     companyName:{type:String},
     brandName:{type:String},
     productGroup:{type:String},
-    stock:{type:Number},
+    stock:{type:Number},    
     buyHistory:[
         {
             date:{type:Date},
@@ -55,6 +55,11 @@ const ProductSchema = new Schema({
     ],
     totalBuyValue:{type:Number},
     totalSalesValue:{type:Number},
+    lastBuyDate:{type:Date},
+    lastSalesDate:{type:Date},
+    lastBuyValue:{tyep:Number},
+    lastSalesValue:{type:Date},
+    lastSalesQuantity:{type:Number},
     username:{type:String},
     userid:{type:String}
 }, {timestamps:true});
