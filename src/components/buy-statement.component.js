@@ -16,6 +16,7 @@ export default function BuyStatement(){
     const [quantity, setQuantity] =  useState(0);
     const [unitPrice, setUnitPrice] =  useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
+    const [payment, setPayment] = useState("");
     const [supplier, setSupplier] =  useState("");
 
     return(
