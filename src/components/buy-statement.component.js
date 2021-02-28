@@ -10,6 +10,10 @@ const username = localStorage.getItem('username');
 const userid = localStorage.getItem('userid');
 
 export default function BuyStatement(){
+    const [date, setDate] =  useState("");
+    const [productName, setProductName] = useState("");
+    const [quantity, setQuantity] =  useState(0);
+    
     return(
         <div>
 
